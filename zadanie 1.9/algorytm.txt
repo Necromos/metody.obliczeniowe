@@ -7,16 +7,45 @@
 -deklaruje sie tablicę x[n+1] (double)
 -for (i=0; i<=n; i++) x[i]=a+i*h;
 -deklaruje się tablicę l[n+1][n+1] na mnoźniki
--pętla for (i=0; i<=n; i++) leci po wszystkich mnożnikach
--w każdym obrocie w/w pętli liczymy mianownik danego iloczynu:
-  double m = 1.0;
+for(int i = 0; i < n + 1; i++) {  //wartości początkowe tablicy
+	for(int j = 1; j < n + 1; j++) {
+		l[i][j] = 0;
+	}
+	l[i][0] = 1;
+}
+											 
+for (int i=0; i<=n; i++) {	// leci po wszystkich mnożnikach
+														//-w każdym obrocie w/w pętli liczymy mianownik danego iloczynu:
+	for(int k = 0; k <=n; k++) {
+		if(k != i) {
+			for(int p = n; p > 0; p--) {
+				l[i][p] = l[i][p-1]; //przesuwanie czyli mnożenie razy x
+			}
+			for(int p = n - 1; p >= 0; p--) {
+				l[i][p] -= x[k] * l[i][p+1]; //mnożenie wielomianu przez -x_j
+			}
+			for(int p = 0; p < n + 1; p++) {
+				l[i][j] /= x[i] - x[p];     //dzielenie przez mianownik
+			}
+		}
+	}
+}
+
+/*
+może się jeszcze przyda
+
+double m = 1.0;
   for (k=0; k<=n; k++){
     if (k!=i){
       m*=(x[i] - x[k]);
+			
     }
   }
+
 -pętla (for j=0; j<=n; j++) leci po kolejnych współczynnikach l[i][j]
 -dla każdego j wywołuje się magiczna funkcja której jeszcze nie ma ale będzie która liczy dany współczynnik (mam już wizję) i dzieli się przez mianownik w m
+*/
+
 -deklaruje się tablicę A[n+1] na wartości, użytkownik ją wypełnia
 -deklaruje się tablicę w[n+1] na wynik, wypełniona zerami
 - for (i=0; i<=n; i++){
