@@ -21,9 +21,13 @@ for (int i=0; i<=n; i++) {	// leci po wszystkich mnożnikach-w każdym obrocie w
 			for(int p = n; p > 0; p--) {
 				l[i][p] = l[i][p-1]; //przesuwanie czyli mnożenie razy x
 			}
+/*
+ *Blok nie działa, przy próbie x0 = 1 x1 = 2 x2 = 3 dla n = 2 przy 1 pełnym obrocie dla l0 daje wynik że l = 5,5 -2 0,5 gdzie
+ *powinno być l = 3 -2,5 0,5
 			for(int p = n - 1; p >= 0; p--) {
 				l[i][p] -= x[k] * l[i][p+1]; //mnożenie wielomianu przez -x_k
 			}
+*/
 			for(int p = 0; p < n + 1; p++) {
 				l[i][p] /= x[i] - x[k];     //dzielenie przez mianownik
 			}
