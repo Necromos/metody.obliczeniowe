@@ -16,7 +16,7 @@ double h = (b-a)/n;
 double x[n+1];
 for (i=0; i<=n; i++){
   x[i] = a + i * h;
-  printf("x[%i] = %lf\n", i, x[i]);
+//  printf("x[%i] = %lf\n", i, x[i]);
 }
 double l[n+1][n+1];
 for (i=0; i<=n; i++){
@@ -43,32 +43,43 @@ for (i=0; i<=n; i++){
 }
 
 for (i=0; i<=n; i++){
-  printf("l[%i]: ", i);
+//  printf("l[%i]: ", i);
   for (j=n; j>=0; j--){
-    printf("%.3lfx^%i ", l[i][j],j);
+//    printf("%.3lfx^%i ", l[i][j],j);
   }
-  printf("\n");
+//  printf("\n");
 }
 
-double c[n+1];
+double c[n+1], w[n+1];
+char o;
+
+wczytaj:
 for (i=0; i<=n; i++){
   printf("Podaj A[%i]: ", i);
   scanf("%lf", &c[i]);
 }
 
-double w[n+1];
 for (i=0; i<=n; i++){
   w[i] = 0;
 }
 
 for (i=0; i<=n; i++){
-  for (j=0; i<=n; j++){
-    w[j] += c[i] * l[i][j];
+  for (j=0; j<=n; j++){
+    w[j] += ( c[i] * l[i][j] );
   }
 }
 
 for (i=n; i>=0; i--){
   printf("%.3lfx^%i ", w[i], i);
+}
+
+printf("\nWprowadzac dane ponownie? (t/n) ");
+do {
+  scanf("%c", &o);
+} while (o!='t' && o!='n');
+
+if (o=='t'){
+  goto wczytaj;
 }
 
 putchar('\n');
