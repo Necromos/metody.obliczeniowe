@@ -31,6 +31,7 @@ for (i=0; i<=n; i++){
       for (p=n; p>0; p--){
         l[i][p] = l[i][p-1];
       }
+      l[i][0] = 0;
       for (p=0; p<=n-1; p++){
         l[i][p] -= x[k] * l[i][p+1];
       }
@@ -42,11 +43,34 @@ for (i=0; i<=n; i++){
 }
 
 for (i=0; i<=n; i++){
+  printf("l[%i]: ", i);
   for (j=n; j>=0; j--){
-    printf("%lf ", l[i][j]);
+    printf("%.3lfx^%i ", l[i][j],j);
   }
   printf("\n");
 }
 
+double c[n+1];
+for (i=0; i<=n; i++){
+  printf("Podaj A[%i]: ", i);
+  scanf("%lf", &c[i]);
+}
+
+double w[n+1];
+for (i=0; i<=n; i++){
+  w[i] = 0;
+}
+
+for (i=0; i<=n; i++){
+  for (j=0; i<=n; j++){
+    w[j] += c[i] * l[i][j];
+  }
+}
+
+for (i=n; i>=0; i--){
+  printf("%.3lfx^%i ", w[i], i);
+}
+
+putchar('\n');
 return 0;
 }
