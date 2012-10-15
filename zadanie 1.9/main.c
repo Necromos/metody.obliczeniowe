@@ -31,7 +31,7 @@ for (i=0; i<=n; i++){
       for (p=n; p>0; p--){
         l[i][p] = l[i][p-1];
       }
-      for (p=n-1; p>=0; p--){
+      for (p=0; p<=n-1; p++){
         l[i][p] -= x[k] * l[i][p+1];
       }
       for (p=0; p<=n; p++){
