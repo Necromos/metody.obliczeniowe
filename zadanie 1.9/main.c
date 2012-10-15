@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define NMAX 32000
+#define NMAX 1000
 
 int main(void){
 int n,i,j,k,p;
