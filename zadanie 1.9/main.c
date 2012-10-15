@@ -42,13 +42,14 @@ for (i=0; i<=n; i++){
   }
 }
 
+/* wyswietlanie l[][]
 for (i=0; i<=n; i++){
-//  printf("l[%i]: ", i);
+  printf("l[%i]: ", i);
   for (j=n; j>=0; j--){
-//    printf("%.3lfx^%i ", l[i][j],j);
+    printf("%.3lfx^%i ", l[i][j],j);
   }
-//  printf("\n");
-}
+  printf("\n");
+}*/
 
 double c[n+1], w[n+1];
 char o;
