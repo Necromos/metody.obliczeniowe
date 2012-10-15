@@ -4,14 +4,16 @@
 int main(void){
 int n,i,j,k,p;
 double a,b;
-printf("Podaj n: ");
-scanf("%i", &n);
+do {
+  printf("Podaj n: ");
+  scanf("%i", &n);
+} while (n>NMAX);
 do {
   printf("Podaj a i b z zalozeniem a<b\na: ");
   scanf("%lf", &a);
   printf("b: ");
   scanf("%lf", &b);
-} while (a>=b || a>NMAX || b>NMAX);
+} while (a>=b);
 double h = (b-a)/n;
 double x[n+1];
 for (i=0; i<=n; i++){
