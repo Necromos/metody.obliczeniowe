@@ -2,12 +2,12 @@
 #define NMAX 1000
 
 int main(void){
-int n,i,j,k,p;
+	int i,j,k,p, n;
 double a,b;
 do {
-  printf("Podaj n: ");
+  printf("Podaj n z przedzialu 1 do %i: ", NMAX);
   scanf("%i", &n);
-} while (n>NMAX);
+} while (n>NMAX || n <= 0);
 do {
   printf("Podaj a i b z zalozeniem a<b\na: ");
   scanf("%lf", &a);
@@ -44,14 +44,15 @@ for (i=0; i<=n; i++){
   }
 }
 
-/* wyswietlanie l[][]
+// wyswietlanie l[][]
+
 for (i=0; i<=n; i++){
   printf("l[%i]: ", i);
   for (j=n; j>=0; j--){
     printf("%.3lfx^%i ", l[i][j],j);
   }
   printf("\n");
-}*/
+}
 
 double c[n+1], w[n+1];
 char o;
