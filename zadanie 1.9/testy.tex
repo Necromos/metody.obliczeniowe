@@ -1,0 +1,106 @@
+\documentclass[12pt,a4paper]{article}
+
+% ustawienia marginesu
+\usepackage[left=1.6in,right=.8in,top=1.5in,bottom=1.5in]{geometry}
+
+% polskie reguły dzielenia wyrazów itd
+\usepackage{polski}
+
+% polskie znaki zakodowane w UTF8
+\usepackage[utf8]{inputenc}
+
+% automatyczne generowanie odnośników w plikach PDF
+\usepackage[pdftex,linkbordercolor={0 0.9 1}]{hyperref}
+
+% pakiety matematyczne
+\usepackage{amsthm,amsmath,amsfonts,amssymb,mathrsfs,amsmath}
+
+% ładne składanie odnośników do stron www
+\usepackage{url}
+
+% rozbudowane możliwości wypunktowań
+\usepackage{enumerate}
+
+% możliwość dodawania plików graficznych
+\usepackage{graphicx} 
+
+%%% definicje twierdzeń itd :)
+\newtheorem{tw}{Twierdzenie}[section]
+\newtheorem{stw}[tw]{Stwierdzenie}
+\newtheorem{fakt}[tw]{Fakt}
+\newtheorem{lemat}[tw]{Lemat}
+
+\theoremstyle{definition}
+\newtheorem{df}[tw]{Definicja}
+\newtheorem{ex}[tw]{Przykład}
+\newtheorem{uw}[tw]{Uwaga}
+\newtheorem{wn}[tw]{Wniosek}
+\newtheorem{zad}{Zadanie}
+
+% oznaczenia zbiorów liczbowych
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+
+
+% wartość bezwzględna, norma, iloczyn skalarny, nośnik, rozpięcie przestrzeni...
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\var}[1]{\operatorname{var}(#1)}
+
+% fajne nagłówki i stopki na stronie
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\textbf{\thepage}}
+\fancyhead[L]{\small\sffamily \nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+
+\title{Testy}
+%\author{Maciej Stankiewicz}
+
+%\date{30 listopada 2010}
+
+\begin{document}
+%\maketitle
+%\tableofcontents
+
+
+\section{Test 1, wieczorem dopisze reszte tylko fajnie jakby ktoś to potem sformatował}
+
+	\begin{displaymath} 
+\begin{split}
+		n=2; a=1; b=3  \\
+		x_0=1; x_1=2; x_2=3\\
+l_0=\prod\limits_{k=0;k\neq0}^2\frac{x-x_k}{x_0-x_k}=\frac{x-x_1}{x_0-x_1}*\frac{x-x_2}{x_0-x_2}=\frac{x-2}{-1}*\frac{x-3}{-2}=\frac{1}{2}x^2-\frac{5}{2}x+3\\
+l_0(x_0)=l_0(1)=1; l_0(x_1)=l_0(2)=0; l_0(x_2)=l_0(2)=0;\\
+l_1=\prod\limits_{k=0;k\neq1}^2\frac{x-x_k}{x_1-x_k}=\frac{x-x_0}{x_1-x_0}*\frac{x-x_1}{x_0-x_2}=\frac{x-1}{1}*\frac{x-3}{-1}=-x^2+4x-3\\
+l_1(x_0)=l_1(1)=0; l_1(x_1)=l_1(2)=1; l_1(x_2)=l_1(2)=0;\\
+l_2=\prod\limits_{k=0;k\neq2}^2\frac{x-x_k}{x_2-x_k}=\frac{x-x_0}{x_2-x_0}*\frac{x-x_2}{x_0-x_1}=\frac{x-1}{2}*\frac{x-2}{1}=\frac{1}{2}x^2-\frac{3}{2}x+1\\
+l_2(x_0)=l_2(1)=0; l_2(x_1)=l_2(2)=0; l_2(x_2)=l_2(2)=1;\\
+1*\\
+A_0=1; A_1=4; A_2=9\\
+L(x)=\sum\limits_{i=0}^2A_i*l_i(x)=1(\frac{1}{2}x^2-\frac{5}{2}x+3)+4(x^2+4x-3)+9(\frac{1}{2}x^2-\frac{3}{2}x+1)=x^2\\
+2*\\
+A_0=2; A_1=1; A_2=3\\
+L(x)=\sum\limits_{i=0}^2A_i*l_i(x)=2(\frac{1}{2}x^2-\frac{5}{2}x+3)+1(x^2+4x-3)+3(\frac{1}{2}x^2-\frac{3}{2}x+1)=\frac{3}{2}x^2-\frac{11}{2}x+6\\
+\end{split}
+\end{displaymath}
+
+\section{Test 2}
+\begin{displaymath} 
+\begin{split}
+n=1; a=1; b=2\\
+\end{split}
+\end{displaymath}
+\section{Test 3}
+\begin{displaymath} 
+\begin{split}
+n=3; a=0; b=6
+\end{split}
+\end{displaymath}
+\end{document}
