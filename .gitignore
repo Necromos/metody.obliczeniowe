@@ -1,1 +1,9 @@
 *.docx
+*.c~
+a.out
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.log
+.gitignore~
