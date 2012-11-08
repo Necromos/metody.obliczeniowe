@@ -7,3 +7,5 @@ a.out
 *.synctex.gz
 *.log
 .gitignore~
+*.class
+*.jar
