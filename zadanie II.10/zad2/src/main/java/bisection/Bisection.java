@@ -10,7 +10,9 @@ public class Bisection {
 		accuracy = accuracy.divide(new Apfloat(100));
 		Apfloat l2 = new Apfloat(2, Apfloat.INFINITE);
 		Apfloat c = new Apfloat(Apfloat.INFINITE);
+		int x = 0;
 		while(b.subtract(a).compareTo(accuracy) >= 0) {
+			x++;
 			c = a.add(b).divide(l2);
 			//nie uwzględniamy zera!
 			//System.out.print(Function1.f(a));
@@ -22,6 +24,7 @@ public class Bisection {
 				a = c;
 			}
 		}
+		System.out.println("Ilość kroków w metodzie połowienia wyniosła " + x);
 		return c;
 	}
 
