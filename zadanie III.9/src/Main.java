@@ -76,7 +76,7 @@ public class Main {
 				// System.out.println(" metoda eulera = " + eulerY);
 				// System.out.println(" zmodyfikowana metoda = " +
 				// modifiedEulerY);
-				// System.out.println(" rozwi¹zanie dok³adne = " + ff(eulerX));
+				// System.out.println(" rozwiÂ¹zanie dokÂ³adne = " + ff(eulerX));
 
 				eulerY = eulerY.add(step.multiply(f(eulerX, eulerY)));
 
@@ -87,20 +87,19 @@ public class Main {
 
 				eulerX = eulerX.add(step);
 			}
-			System.out.println("Œredni b³¹d metody Eulera:"
+			System.out.println("Åšredni bÅ‚Ä…d metody Eulera:"
 					+ sumErrorEuler.divide(BigDecimal.valueOf(n), scale,
 							RoundingMode.HALF_DOWN));
-			System.out.println("B³¹d maksymalny metody Eulera: "
+			System.out.println("BÅ‚Ä…d maksymalny metody Eulera: "
 					+ maxErrorEuler);
-			System.out.println("Œredni b³¹d metody Zmodyfikowanej:"
+			System.out.println("Åšredni bÅ‚Ä…d metody Zmodyfikowanej:"
 					+ sumErrorModified.divide(BigDecimal.valueOf(n), scale,
 							RoundingMode.HALF_DOWN));
-			System.out.println("B³¹d maksymalny metody Zmodyfikowanej: "
+			System.out.println("BÅ‚Ä…d maksymalny metody Zmodyfikowanej: "
 					+ maxErrorModified);
 
-			System.out.println("Zakoñczyæ?");
+			System.out.println("ZakoÅ„czyÄ‡?");
 			c = input.next();
 		} while (!c.equals("t"));
-
 	}
 }
